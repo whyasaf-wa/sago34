@@ -134,4 +134,5 @@ footer {
     font-size: 18px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
+    z-index: 999;
 }
