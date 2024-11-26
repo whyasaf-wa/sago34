@@ -7,7 +7,6 @@
     <title>Sagolan</title>
 </head>
 <body>
-    <!-- Ana Sayfa -->
     <section id="house-page">
         <h1>Sagolanmaya Hoşgeldin!</h1>
         <h2>Sagolanmak İster misin? Doğru Yerdesin...</h2>
@@ -17,11 +16,9 @@
         </a>
     </section>
 
-    <!-- Sagolanma Sayfası -->
     <section id="sagolan-page" style="display:none;">
         <h1>İŞTE BURADASIN ŞİMDİ SAGOLANMA ZAMANI</h1>
         <h2>İstediğin Sagoyu Seç ve Sesi Aç!!!</h2>
-        <h2>Haydi seçsene neyi bekliyorsun.</h2>
         <div class="resim-container">
             <figure>
                 <img src="f0dca85f5f6726f148174c524bb32865.jpg" width="200" height="250" class="sago1-resim" id="1sago-resim">
@@ -45,11 +42,19 @@
                 </audio>
             </figure>
         </div>
+        <button id="video-button" class="video-button">! B O N U S !</button>
+        <div id="video-container" style="display: none;" class="video-container">
+            <button id="close-video-button" class="close-video-button">Kapat</button>
+            <video id="sago-video" width="600" controls>
+                <source src="Torigadi cinderi Sagopa kajmer extended version☺.mp4" type="video/mp4">
+            </video>
+        </div>
     </section>
 
     <footer>Sagolanma Sitesi by Marki.</footer>
 
     <script>
+       
         const housePage = document.getElementById("house-page");
         const sagolanPage = document.getElementById("sagolan-page");
         const link = document.querySelector("a[href='#sagolan-page']");
@@ -60,6 +65,7 @@
             sagolanPage.style.display = "block";
         });
 
+        
         const sago1Resim = document.getElementById("1sago-resim");
         const sago1Ses = document.getElementById("sago1-ses");
         sago1Resim.addEventListener("click", () => {
@@ -89,6 +95,26 @@
                 sago3Ses.pause();
             }
         });
+
+     
+        const videoButton = document.getElementById("video-button");
+        const videoContainer = document.getElementById("video-container");
+        const closeVideoButton = document.getElementById("close-video-button");
+        const video = document.getElementById("sago-video");
+
+
+        videoButton.addEventListener("click", () => {
+            videoContainer.style.display = "block";
+            video.play();
+        });
+
+        closeVideoButton.addEventListener("click", () => {
+            video.pause(); 
+            video.currentTime = 0; 
+            videoContainer.style.display = "none"; 
+        });
     </script>
 </body>
 </html>
+
+
