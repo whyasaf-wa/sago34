@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Sagolan</title>
+</head>
+<body>
+    <!-- Ana Sayfa -->
+    <section id="house-page">
+        <h1>Sagolanmaya Hoşgeldin!</h1>
+        <h2>Sagolanmak İster misin? Doğru Yerdesin...</h2>
+        <p>Derde tasaya SON. SAGOLANARAK bütün bunlardan arınıyoruz. Yapman gereken tek şey tıklamak.</p>
+        <a href="#sagolan-page">
+            <img src="c40157d8-2568-44ba-9985-fedb674f7644.jpg" alt="Sagolanmak İçin Tıkla" width="250" height="350" class="sago-resim">
+        </a>
+    </section>
+
+    <!-- Sagolanma Sayfası -->
+    <section id="sagolan-page" style="display:none;">
+        <h1>İŞTE BURADASIN ŞİMDİ SAGOLANMA ZAMANI</h1>
+        <h2>İstediğin Sagoyu Seç ve Sesi Aç!!!</h2>
+        <h2>Haydi seçsene neyi bekliyorsun.</h2>
+        <div class="resim-container">
+            <figure>
+                <img src="f0dca85f5f6726f148174c524bb32865.jpg" width="200" height="250" class="sago1-resim" id="1sago-resim">
+                <figcaption>Cafede Sago</figcaption>
+                <audio id="sago1-ses">
+                    <source src="Al 1'de Burdan Yak.mp3" type="audio/mpeg">
+                </audio>
+            </figure>
+            <figure>
+                <img src="images.jpeg" width="200" height="250" class="sago2-resim" id="2sago-resim">
+                <figcaption>Hz.Ali Sago</figcaption>
+                <audio id="sago2-ses">
+                    <source src="Sagopa Kajmer - İstisnalar Kaideyi Bozmaz.mp3" type="audio/mpeg">
+                </audio>
+            </figure>
+            <figure>
+                <img src="1e6ba37ff18e332bfcd4a7a6b6ea6031.jpg" width="200" height="250" class="sago3-resim">
+                <figcaption>1980's Sago</figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <footer>Sagolanma Sitesi by Marki.</footer>
+
+    <script>
+        // Navigasyon
+        const housePage = document.getElementById("house-page");
+        const sagolanPage = document.getElementById("sagolan-page");
+        const link = document.querySelector("a[href='#sagolan-page']");
+
+        link.addEventListener("click", (e) => {
+            e.preventDefault();
+            housePage.style.display = "none";
+            sagolanPage.style.display = "block";
+        });
+
+        // Ses Çalma
+        const sago1Resim = document.getElementById("1sago-resim");
+        const sago1Ses = document.getElementById("sago1-ses");
+        sago1Resim.addEventListener("click", () => {
+            if (sago1Ses.paused) {
+                sago1Ses.play();
+            } else {
+                sago1Ses.pause();
+            }
+        });
+
+        const sago2Resim = document.getElementById("2sago-resim");
+        const sago2Ses = document.getElementById("sago2-ses");
+        sago2Resim.addEventListener("click", () => {
+            if (sago2Ses.paused) {
+                sago2Ses.play();
+            } else {
+                sago2Ses.pause();
+            }
+        });
+    </script>
+</body>
+</html>
