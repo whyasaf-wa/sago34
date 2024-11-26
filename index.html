@@ -38,8 +38,11 @@
                 </audio>
             </figure>
             <figure>
-                <img src="1e6ba37ff18e332bfcd4a7a6b6ea6031.jpg" width="200" height="250" class="sago3-resim">
+                <img src="1e6ba37ff18e332bfcd4a7a6b6ea6031.jpg" width="200" height="250" class="sago3-resim" id="3sago-resim">
                 <figcaption>1980's Sago</figcaption>
+                <audio id="sago3-ses">
+                    <source src="Sagopa Kajmer - Terapi.mp3" type="audio/mpeg">
+                </audio>
             </figure>
         </div>
     </section>
@@ -47,7 +50,6 @@
     <footer>Sagolanma Sitesi by Marki.</footer>
 
     <script>
-        // Navigasyon
         const housePage = document.getElementById("house-page");
         const sagolanPage = document.getElementById("sagolan-page");
         const link = document.querySelector("a[href='#sagolan-page']");
@@ -58,7 +60,6 @@
             sagolanPage.style.display = "block";
         });
 
-        // Ses Çalma
         const sago1Resim = document.getElementById("1sago-resim");
         const sago1Ses = document.getElementById("sago1-ses");
         sago1Resim.addEventListener("click", () => {
@@ -76,6 +77,16 @@
                 sago2Ses.play();
             } else {
                 sago2Ses.pause();
+            }
+        });
+
+        const sago3Resim = document.getElementById("3sago-resim");
+        const sago3Ses = document.getElementById("sago3-ses");
+        sago3Resim.addEventListener("click", () => {
+            if (sago3Ses.paused) {
+                sago3Ses.play();
+            } else {
+                sago3Ses.pause();
             }
         });
     </script>
